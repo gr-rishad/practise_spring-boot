@@ -1,5 +1,6 @@
-package com.example.almighty.java;
+package com.example.almighty.java.controller;
 
+import com.example.almighty.java.service.UserService;
 import com.example.almighty.java.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

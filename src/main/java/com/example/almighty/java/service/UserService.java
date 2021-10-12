@@ -1,5 +1,6 @@
-package com.example.almighty.java;
+package com.example.almighty.java.service;
 
+import com.example.almighty.java.repository.UserRepository;
 import com.example.almighty.java.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    List<User> findAll(){
+   public List<User> findAll(){
       return   userRepository.findAll();
     }
 
