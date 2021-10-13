@@ -1,6 +1,6 @@
 package com.example.almighty.java.model;
 
-import lombok.Data;
+
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
@@ -15,6 +15,9 @@ public class Address extends AbstractPersistable<Long> {
     private String city;
     private String state;
     private String country;
+
+    // create transient field for userId
+    private transient Long userId;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -50,5 +53,13 @@ public class Address extends AbstractPersistable<Long> {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

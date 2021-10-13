@@ -1,13 +1,12 @@
 package com.example.almighty.java.model;
 
-import lombok.Data;
+
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import java.util.List;
+import javax.persistence.OneToMany;;
 import java.util.Set;
 
 @Entity
@@ -20,7 +19,7 @@ public class User extends AbstractPersistable<Long> {
     private String password;
 
 
-      // @OneToMany(mappedBy = "user_id",fetch = FetchType.LAZY)
+
       @OneToMany(targetEntity = Address.class,mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
       Set<Address> addresses;
 
@@ -47,6 +46,12 @@ public class User extends AbstractPersistable<Long> {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    /*
+     @OneToMany(mappedBy = "user_id",fetch = FetchType.LAZY)
+     List<Address> address;
+     // getter setter
+     */
 
 
 }
